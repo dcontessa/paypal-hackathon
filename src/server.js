@@ -36,6 +36,8 @@ function markPaid(inv, via) {
   audit('payment', `${inv.client} paid ${inv.id} (${inv.amount}) via ${via}`, { invoiceId: inv.id });
 }
 
+app.get('/api/health', (_req, res) => res.json({ ok: true, mode: mode() }));
+
 app.get('/api/state', async (_req, res) => {
   await syncFromPaypal();
   const reminded = new Set(state.proposals.filter((p) => p.status !== 'rejected').map((p) => p.invoiceId));

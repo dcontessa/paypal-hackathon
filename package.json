@@ -1,0 +1,20 @@
+{
+  "name": "runway-paypal-ai-hackathon",
+  "version": "0.1.0",
+  "description": "Runway: an AI cash-flow copilot that helps micro-merchants recover late payments through PayPal, with human approval on every action.",
+  "type": "module",
+  "license": "MIT",
+  "private": true,
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "node src/server.js",
+    "seed": "node scripts/seed-sandbox.js",
+    "test": "node --test \"test/*.test.js\""
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^1.6.0",
+    "express": "^5.3.0"
+  }
+}
